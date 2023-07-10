@@ -146,7 +146,7 @@ export default function Healthcheck({ datas }) {
     try {
       setIsloading(true);
       const response = await axios.post(
-        "http://localhost:3000/api/report",
+        "https://survery.vercel.app/api/report",
         data
       );
 

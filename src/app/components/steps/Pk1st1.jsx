@@ -36,7 +36,7 @@ function Pk1st1({ setSetps }) {
     try {
       setIsloading(true);
       const response = await axios.post(
-        "http://localhost:3000/api/homecare",
+        "https://survery.vercel.app/api/homecare",
         data
       );
 

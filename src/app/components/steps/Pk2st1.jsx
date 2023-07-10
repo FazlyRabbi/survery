@@ -36,7 +36,10 @@ function Pk2st1({ setSetps }) {
   const sendMail = async () => {
     const email = { email: jobs.email };
 
-    const response = await axios.post("http://localhost:3000/api/email", email);
+    const response = await axios.post(
+      "https://survery.vercel.app/api/email",
+      email
+    );
   };
 
   const handleSubmit = async (e) => {
@@ -44,7 +47,10 @@ function Pk2st1({ setSetps }) {
 
     try {
       setIsloading(true);
-      const response = await axios.post("http://localhost:3000/api/jobs", jobs);
+      const response = await axios.post(
+        "https://survery.vercel.app/api/jobs",
+        jobs
+      );
 
       if (response.data.ok) {
         if (complete) {

@@ -18,7 +18,7 @@ const handler = NextAuth({
 
       async authorize(credentials, req) {
         const response = await axios.post(
-          "http://localhost:3000/api/login",
+          "https://survery.vercel.app/api/login",
 
           { email: credentials.email, password: credentials?.password },
 
