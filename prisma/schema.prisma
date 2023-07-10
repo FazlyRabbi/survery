@@ -1,0 +1,86 @@
+// datasource db {
+//   provider = "mongodb"
+//   url      = "mongodb+srv://vefixeb522:ZQO60P6s40jbrZDD@cluster0.cs9pz1m.mongodb.net/formmy"
+// }
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://root:BK7SWXJgkKSCjD8yhyqHJpkVhpy9Z5hP@dpg-cihepgd9aq012et5qga0-a.oregon-postgres.render.com/root_ym9k"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model HomeCare {
+  id              Int    @id @default(autoincrement())
+  fullName        String
+  lastName        String
+  email           String @unique
+  phoneNumber     String @unique
+  address         String
+  city            String
+  state           String
+  postalCode      String
+  country         String
+  medicalId       String
+  callingTime     String
+  mltc            String
+  switchingAgency String
+  lookingFor      String
+}
+
+model Jobs {
+  id          Int    @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String @unique
+  phoneNumber String @unique
+  address     String
+  city        String
+  state       String
+  postalCode  String
+  country     String
+  height      String
+  weight      String
+  certificate String
+  drive       String
+  experience  String
+  available   String
+}
+
+model HealthCheacks {
+  id          Int    @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String @unique
+  phoneNumber String @unique
+  address     String
+  city        String
+  state       String
+  postalCode  String
+  country     String
+  medicalId   String
+  schedule    String
+}
+
+model HealthCheackRepots {
+  id                Int    @id @default(autoincrement())
+  height            String
+  weight            String
+  bloodPressure     String
+  pulseRate         String
+  currentComplaints String
+  bloodGlucose      String
+  urinTest          String
+  recomendationByRN String
+  nextFollowUpDate  String
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+  name     String
+  role     String @default("user")
+}
